@@ -1,2 +1,24 @@
 /node_modules/
 .idea
+
+# dependencies
+application/node_modules
+application/.pnp
+application/.pnp.js
+
+# testing
+application/coverage
+
+# production
+application/build
+
+# misc
+application/.DS_Store
+application/.env.local
+application/.env.development.local
+application/.env.test.local
+application/.env.production.local
+
+application/npm-debug.log*
+application/yarn-debug.log*
+application/yarn-error.log*
