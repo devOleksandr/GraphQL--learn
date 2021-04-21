@@ -20,9 +20,11 @@ class MoviesForm extends React.Component {
   };
 
   handleSave = () => {
-    const { selectedValue, onClose, addMovie } = this.props;
+    const { selectedValue, onClose, addMovie, updateMovie } = this.props;
     const { id, name, genre, rate, directorId, watched } = selectedValue;
-    addMovie({ id, name, genre, rate: Number(rate), directorId, watched: Boolean(watched) });
+    id ?
+    updateMovie({id, name, genre, rate: Number(rate), directorId, watched: Boolean(watched) }) :
+    addMovie({ name, genre, rate: Number(rate), directorId, watched: Boolean(watched) });
     onClose();
   };
 
@@ -75,7 +77,7 @@ class MoviesForm extends React.Component {
               onChange={handleSelectChange}
               input={<OutlinedInput name="directorId" id="outlined-director" labelWidth={57} />}
             >
-              {directors.map(director => <MenuItem key={director.id} value={director.id}>{director.name}</MenuItem>)}
+            {directors.map(director => <MenuItem key={director.id} value={director.id}>{director.name}</MenuItem>)}
             </Select>
           </FormControl>
           <div className={classes.wrapper}>
@@ -91,6 +93,6 @@ class MoviesForm extends React.Component {
       </Dialog>
     );
   }
-}
+};
 
-export default withHocs(MoviesForm);
+  export default withHocs(MoviesForm);

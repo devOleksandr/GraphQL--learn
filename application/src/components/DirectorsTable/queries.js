@@ -2,10 +2,11 @@ import { gql } from 'apollo-boost';
 
 export const directorsQuery = gql`
   query directorsQuery {
-    directors{
+    directors {
+      id
       name
       age
-      movies{
+      movies {
         name
         id
       }

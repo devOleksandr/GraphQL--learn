@@ -16,7 +16,6 @@ import DirectorsDialog from '../DirectorsDialog/DirectorsDialog';
 
 import withHocs from './DirectorsTableHoc';
 
-
 class DirectorsTable extends React.Component {
   state = {
     anchorEl: null,
@@ -48,8 +47,7 @@ class DirectorsTable extends React.Component {
   render() {
     const { anchorEl, openDialog, data: activeElem = {} } = this.state;
     const { classes, data = {} } = this.props;
-
-    const { directors = []} = data;
+    const { directors = [] } = data;
 
     return (
       <>
