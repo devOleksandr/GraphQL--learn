@@ -13,7 +13,7 @@ class DirectorsForm extends React.Component {
   handleSave = () => {
     const { selectedValue, onClose, addDirector } = this.props;
     const { id, name, age } = selectedValue;
-    addDirector({ name, age: Number(age) });
+    addDirector({ name, age: Number(age), id });
     onClose();
   };
 
@@ -55,4 +55,4 @@ class DirectorsForm extends React.Component {
   }
 };
 
-export default withHocs(DirectorsForm);
+  export default withHocs(DirectorsForm);
